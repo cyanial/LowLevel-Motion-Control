@@ -89,6 +89,47 @@
 #define MGMSG_HUB_REQ_BAYUSED         0x0065 // p.51
 #define MGMSG_HUB_GET_BAYUSED         0x0066 // p.51
 
+#define MGMSG_MOT_SET_VELPARAMS       0x0413
+#define MGMSG_MOT_REQ_VELPARAMS       0x0414
+#define MGMSG_MOT_GET_VELPARAMS       0x0415
+
+#define MGMSG_MOT_SET_JOGPARAMS       0x0416
+#define MGMSG_MOT_REQ_JOGPARAMS       0x0417
+#define MGMSG_MOT_GET_JOGPARAMS       0x0418
+
+#define MGMSG_MOT_ERQ_ADCINPUTS       0x042B  // p.65
+#define MGMSG_MOT_GET_ADCINPUTS       0x042C  // p.65
+
+#define MGMSG_MOT_SET_MOVERELPARAMS   0x0445  
+#define MGMSG_MOT_REQ_MOVERELPARAMS   0x0446
+#define MGMSG_MOT_GET_MOVERELPARAMS   0x0447
+
+#define MGMSG_MOT_SET_MOVEABSPARAMS   0x0450
+#define MGMSG_MOT_REQ_MOVEABSPARAMS   0x0451
+#define MGMSG_MOT_GET_MOVEABSPARAMS   0x0452
+
+#define MGMSG_MOT_SET_HOMEPARAMS      0x0440
+#define MGMSG_MOT_REQ_HOMEPARAMS      0x0441
+#define MGMSG_MOT_GET_HOMEPARAMS      0x0442
+
+#define MGMSG_MOT_SET_LIMSWITCHPARAMS 0x0423
+#define MGMSG_MOT_REQ_LIMSWITCHPARAMS 0x0424
+#define MGMSG_MOT_GET_LIMSWITCHPARAMS 0x0425
+
+#define MGMSG_MOT_MOVE_HOME           0x0443
+#define MGMSG_MOT_MOVE_HOMED          0x0444
+
+#define MGMSG_MOT_MOVE_RELATIVE       0x0448
+#define MGMSG_MOT_MOVE_ABSOLUTE       0x0453 
+#define MGMSG_MOT_MOVE_COMPLETED      0x0464
+
+#define MGMSG_MOT_MOVE_JOG            0x046A
+#define MGMSG_MOT_MOVE_VELOCITY       0x0457 // p.83
+#define MGMSG_MOT_MOVE_STOP           0x0465 // p.84
+#define MGMSG_MOT_MOVE_STOPPED        0x0466 // p.85
+
+
+
 // Return State
 #define APT_STATE                     uint_8
 #define STATUS_OK                     0x00
@@ -104,6 +145,30 @@ void APT_IdentifyChannel(CHANNEL_ID ch);
 APT_STATE APT_ChannelEnable(CHANNEL_ID ch);
 chan_state APT_ChannelState(CHANNEL_ID ch);
 
+APT_SET_VelParams();
+APT_GET_VelParams();
+
+APT_SET_JogParams();
+APT_GET_JogParams();
+
+APT_SET_MoveRelParams();
+APT_GET_MoveRelParams();
+
+APT_GET_ADCInputs();
+
+APT_SET_MoveAbsParams();
+APT_GET_MoveAbsParams();
+
+APT_SET_HomeParams();
+APT_GET_HomeParams();
+
+APT_SET_LimSwitchParams();
+APT_GET_LimSwitchParams();
+
+APT_MOV_Home();
+APT_MOV_Relative();
+APT_MOV_Absolute();
+APT_MOV_Jog();
 
 
 
